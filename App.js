@@ -36,17 +36,8 @@ export default function App() {
           style={styles.inputText}
           // onPress={this.onLogin.bind(this)}
         />
-      <Text>Hello Mr. Ashwani kumar how was the meeting of today</Text>
+      <Text>Hello Mr. Ashwani kumar how was your day</Text>
       <StatusBar style="auto" />
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
