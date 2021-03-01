@@ -8,7 +8,7 @@ export default function Head() {
       <TextInput placeholder={"xyz@gmail.com"} style={styles.inputText} />
       <TextInput placeholder={"Password"} style={styles.inputText} />
       <Button title={"Login"} style={styles.inputText} />
-      <Text>hello ashwani you are awesome yar</Text>
+      <Text>CrownStack welcome you</Text>
     </View>
   );
 }
