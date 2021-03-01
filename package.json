@@ -18,5 +18,10 @@
   "devDependencies": {
     "@babel/core": "~7.9.0"
   },
-  "private": true
+  "private": true,
+  "name": "nativeproject",
+  "version": "1.0.0",
+  "repository": "https://github.com/ashwani100596/ReactNative-Project.git",
+  "author": "ashwani100596 <ashwan201kumar@gmail.com>",
+  "license": "MIT"
 }
