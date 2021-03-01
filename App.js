@@ -20,7 +20,7 @@ export default function App() {
     <View style={styles.container}>
       <Text style={styles.paragraph}>Hello Welcome to CrownStack</Text>
       <Head />
-      <Text>Thank you for giving your valuable time</Text>
+      <Text>Thank you </Text>
       <StatusBar style="auto" />
     </View>
   );
