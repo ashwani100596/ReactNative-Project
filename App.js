@@ -1,28 +1,34 @@
 import React, { useState, useEffect } from "react";
-import { Text, View, StyleSheet, Image } from "react-native";
+import { Text, View, StyleSheet, Image, ImageBackground } from "react-native";
 import Constants from "expo-constants";
 import { StatusBar } from "expo-status-bar";
 import Head from "./head";
-
+import Login from "./Login";
+import Tab from "./tab.js";
+import { NavigationContainer } from "@react-navigation/native";
 export default function App() {
   const [splash, setSplash] = useState(true);
   useEffect(() => {
     setTimeout(() => {
       setSplash(false);
-    }, 3000);
+    }, 2000);
   }, []);
 
   return splash ? (
     <View style={styles.container}>
-      <Image style={styles.logo} source={require("./assets/blur.jpg")} />
+      <Image
+        style={styles.logo}
+        source={require("./assets/blur.jpg")}
+        style={{ width: "100%", height: "100%", opacity: 0.9 }}
+      />
     </View>
   ) : (
-    <View style={styles.container}>
-      <Text style={styles.paragraph}>Hello Welcome to CrownStack</Text>
-      <Head />
-      <Text>Thank you </Text>
-      <StatusBar style="auto" />
-    </View>
+    <Login />
+    // <Head />
+    // <Tab />
+    // <NavigationContainer>
+    //   <MyDrawer />
+    // </NavigationContainer>
   );
 }
 
