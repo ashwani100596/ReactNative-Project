@@ -1,6 +1,7 @@
 import React from "react";
 import { Text, View, TextInput, Button, StyleSheet } from "react-native";
 import { useForm, Controller } from "react-hook-form";
+import Home from "./Home";
 import Constants from "expo-constants";
 
 export default function Login() {
@@ -63,7 +64,17 @@ export default function Login() {
       <Button
         style={styles.submitButtonText}
         title="Submit"
-        onPress={handleSubmit((data) => console.log(data))}
+        onPress={() => {
+          if (
+            UserName != "" &&
+            UserName != null &&
+            Password != "" &&
+            Password != null
+          ) {
+            Home.navigate("Home");
+          }
+        }}
+        // onPress={handleSubmit((data) => console.log(data))}
       />
     </View>
   );
