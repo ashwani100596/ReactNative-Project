@@ -1,10 +1,12 @@
 import React from "react";
 import { Text, View, TextInput, Button, StyleSheet } from "react-native";
 import { useForm, Controller } from "react-hook-form";
-import Home from "./Home";
+import Home from "./Home.js";
 import Constants from "expo-constants";
+import { NavigationContainer } from "@react-navigation/native";
+import { createStackNavigator } from "@react-navigation/stack";
 
-export default function Login() {
+export default function Login({ navigation }) {
   const { control, handleSubmit, errors } = useForm();
 
   return (
@@ -64,17 +66,11 @@ export default function Login() {
       <Button
         style={styles.submitButtonText}
         title="Submit"
-        onPress={() => {
-          if (
-            UserName != "" &&
-            UserName != null &&
-            Password != "" &&
-            Password != null
-          ) {
-            Home.navigate("Home");
+        onPress={handleSubmit((data) => {
+          if (data !== "") {
+            return navigation.navigate("Home");
           }
-        }}
-        // onPress={handleSubmit((data) => console.log(data))}
+        })}
       />
     </View>
   );

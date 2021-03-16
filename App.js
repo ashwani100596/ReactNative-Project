@@ -2,10 +2,12 @@ import React, { useState, useEffect } from "react";
 import { Text, View, StyleSheet, Image, ImageBackground } from "react-native";
 import Constants from "expo-constants";
 import { StatusBar } from "expo-status-bar";
-import Head from "./head";
-import Login from "./Login";
-import Tab from "./tab.js";
+import drawerNavigator from "./src/drawerContent/drawerNavigator.js";
 import { NavigationContainer } from "@react-navigation/native";
+// import Login from "./src/Login.js";
+// import Tab from "./src/tab.js";
+
+// import { NavigationContainer } from "@react-navigation/native";
 export default function App() {
   const [splash, setSplash] = useState(true);
   useEffect(() => {
@@ -23,12 +25,10 @@ export default function App() {
       />
     </View>
   ) : (
-    <Login />
-    // <Head />
-    // <Tab />
-    // <NavigationContainer>
-    //   <MyDrawer />
-    // </NavigationContainer>
+    <NavigationContainer>
+      <drawerNavigator />
+    </NavigationContainer>
+    // <Login />
   );
 }
 
