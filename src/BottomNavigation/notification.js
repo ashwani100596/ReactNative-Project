@@ -17,12 +17,6 @@ export default Notification;
 
 const styles = StyleSheet.create({
   Text: {
-    // width: 200,
-    // height: 44,
-    // padding: 10,
-    // borderWidth: 1,
-    // borderColor: "black",
-    // marginBottom: 10,
     fontWeight: "bold",
     marginTop: 500,
     textAlign: "center",
