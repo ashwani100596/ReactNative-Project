@@ -1,7 +1,7 @@
 import React, { component } from "react";
 import { Text, View, Button, StyleSheet } from "react-native";
 import SettingsScreen from "./BottomNavigation/settingScreen";
-import Notification from "./BottomNavigation/notification";
+import Profile from "./BottomNavigation/Profile";
 import Ionicons from "react-native-vector-icons/Ionicons";
 import HomeStackNavigator from "./StackNavigation/HomeStackNavigator";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
@@ -18,7 +18,7 @@ const MainStackNavigator = () => {
             iconName = focused ? "ios-home" : "ios-home";
           } else if (route.name === "Settings") {
             iconName = focused ? "ios-list" : "ios-list";
-          } else if (route.name === "Notification") {
+          } else if (route.name === "Profile") {
             iconName = focused ? "ios-person" : "ios-person";
           }
 
@@ -33,7 +33,7 @@ const MainStackNavigator = () => {
     >
       <Tab.Screen name="Home" component={HomeStackNavigator} />
       <Tab.Screen name="Settings" component={SettingsScreen} />
-      <Tab.Screen name="Notification" component={Notification} />
+      <Tab.Screen name="Profile" component={Profile} />
     </Tab.Navigator>
   );
 };
