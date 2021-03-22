@@ -16,7 +16,7 @@ import Plans from "./Screen/Plans";
 import Refrel from "./Screen/Refrel";
 import MainStackNavigator from "../MainStackNavigator";
 import SettingScreen from "../BottomNavigation/settingScreen";
-import Notification from "../BottomNavigation/notification";
+import Profile from "../BottomNavigation/Profile";
 
 function CustomDrawerContent(props) {
   return (
@@ -44,7 +44,7 @@ export default function DrawerNavigator() {
       <Drawer.Screen name="Home" component={MainStackNavigator} />
       <Drawer.Screen name="EditProfile" component={EditProfile} />
       <Drawer.Screen name="Settings" component={SettingScreen} />
-      <Drawer.Screen name="Notification" component={Notification} />
+      <Drawer.Screen name="Profile" component={Profile} />
       <Drawer.Screen name="Feedback" component={Feedback} />
       <Drawer.Screen name="Logout" component={Logout} />
       <Drawer.Screen name="ManageSubricption" component={ManageSubricption} />
