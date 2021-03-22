@@ -1,58 +1,59 @@
-import React from "react";
-// import { View, Button, StyleSheet, Text, TouchableOpacity } from "react-native";
+import React, { useState, useEffect } from "react";
 import {
   SafeAreaView,
   View,
   FlatList,
   StyleSheet,
   Text,
+  ImageBackground,
   StatusBar,
   TouchableOpacity,
   Button,
 } from "react-native";
-import axios from "axios";
+import { ApiUrl } from "../../../api/ApiUrl";
+import Music from "./Music.js";
 
 export default HomePage = ({ navigation }) => {
-  //   const ApiUrl = https://itunes.apple.com/search?term=Michael+jackson;
-  //         keyExtractor={(item) => item.id}
+  const [Songs, setSongs] = useState([]);
 
-  const Apicall = () => {
-    axios
-      .get("https://itunes.apple.com/search?term=Michael+jackson")
-      .then(function (response) {
-        console.log(response);
-        alert(JSON.stringify(response.data));
-      })
-      .catch(function (error) {
-        console.log(error);
-        alert(error.message);
-      })
-      .finally(function () {
-        alert("finall called");
-      });
+  useEffect(() => {
+    getSongsFromApi();
+  }, []);
+
+  const getSongsFromApi = async () => {
+    try {
+      const response = await ApiUrl.get("search?term=Michael+jackson");
+
+      return setSongs(response.data);
+    } catch (error) {
+      console.warn(error);
+    }
   };
+
   return (
-    <FlatList
-      data={}
-      renderItem={}
-      keyExtractor={(item) => item.id}
-      extraData={selectedId}
-    />
+    <View>
+      <ImageBackground
+        style={styles.hello}
+        source={require("../../../images/jaction.jpg")}
+      ></ImageBackground>
+      <FlatList
+        data={Songs.results}
+        keyExtractor={(index) => index.key}
+        renderItem={({ item }) => {
+          return <Music item={item} navigation={navigation} />;
+        }}
+      />
+    </View>
   );
 };
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    marginTop: StatusBar.currentHeight || 0,
-  },
-  item: {
-    backgroundColor: "#f9c2ff",
-    padding: 20,
-    marginVertical: 8,
-    marginHorizontal: 16,
-  },
-  title: {
-    fontSize: 32,
+  hello: {
+    position: "absolute",
+    top: 0,
+    left: 0,
+    bottom: 0,
+    right: 0,
+    opacity: 0.7,
   },
 });
