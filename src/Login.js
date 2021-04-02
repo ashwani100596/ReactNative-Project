@@ -16,15 +16,6 @@ export default function Login({ navigation }) {
         control={control}
         render={({ onChange, onBlur, value }) => (
           <TextInput
-            style={{
-              paddingHorizontal: 20,
-              borderWidth: 1,
-              paddingVertical: 8,
-              margin: 15,
-              height: 10,
-              borderColor: "#7a42f4",
-              borderWidth: 1,
-            }}
             style={styles.input}
             placeholder="Enter Your Username"
             onBlur={onBlur}
@@ -92,6 +83,13 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderRadius: 45,
     paddingLeft: 45,
+    paddingHorizontal: 20,
+    borderWidth: 1,
+    paddingVertical: 8,
+    margin: 15,
+    height: 10,
+    borderColor: "#7a42f4",
+    borderWidth: 1,
   },
   submitButton: {
     backgroundColor: "#7a42f4",
