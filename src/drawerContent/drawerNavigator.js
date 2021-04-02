@@ -9,6 +9,7 @@ import {
 } from "@react-navigation/drawer";
 import EditProfile from "./Screen/EditProfile";
 import Feedback from "./Screen/Feedback";
+import MusicStack from "./Screen/MusicStack";
 import Logout from "./Screen/Logout";
 import ManageSubricption from "./Screen/ManageSubricption";
 import Payment from "./Screen/Payment";
@@ -39,9 +40,20 @@ const Drawer = createDrawerNavigator();
 export default function DrawerNavigator() {
   return (
     <Drawer.Navigator
-      drawerContent={(props) => <CustomDrawerContent {...props} />}
+    // drawerContent={(props) => <CustomDrawerContent {...props} />}
     >
       <Drawer.Screen name="Home" component={MainStackNavigator} />
+      <Drawer.Screen
+        name="MusicStack"
+        component={MusicStack}
+        options={{
+          title: "Music",
+          headerStyle: {
+            backgroundColor: "#fff",
+          },
+          headerTintColor: "black",
+        }}
+      />
       <Drawer.Screen name="EditProfile" component={EditProfile} />
       <Drawer.Screen name="Settings" component={SettingScreen} />
       <Drawer.Screen name="Profile" component={Profile} />
