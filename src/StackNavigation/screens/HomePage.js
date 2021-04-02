@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useMemo, useCallback } from "react";
 import {
   SafeAreaView,
   View,
@@ -10,39 +10,13 @@ import {
   TouchableOpacity,
   Button,
 } from "react-native";
-import { ApiUrl } from "../../../api/ApiUrl";
-import Music from "./Music.js";
+// import { ApiUrl } from "../../../api/ApiUrl";
+// import Music from "./Music.js";
 
-export default HomePage = ({ navigation }) => {
-  const [Songs, setSongs] = useState([]);
-
-  useEffect(() => {
-    getSongsFromApi();
-  }, []);
-
-  const getSongsFromApi = async () => {
-    try {
-      const response = await ApiUrl.get("search?term=Michael+jackson");
-
-      return setSongs(response.data);
-    } catch (error) {
-      console.warn(error);
-    }
-  };
-
+export default HomePage = () => {
   return (
     <View>
-      <ImageBackground
-        style={styles.hello}
-        source={require("../../../images/jaction.jpg")}
-      ></ImageBackground>
-      <FlatList
-        data={Songs.results}
-        keyExtractor={(index) => index.key}
-        renderItem={({ item }) => {
-          return <Music item={item} navigation={navigation} />;
-        }}
-      />
+      <Text>hello miss</Text>
     </View>
   );
 };
