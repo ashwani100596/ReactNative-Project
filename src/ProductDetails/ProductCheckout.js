@@ -7,8 +7,10 @@ import {
   TouchableOpacity,
 } from "react-native";
 import { ScrollView } from "react-native-gesture-handler";
+import ProductHome from "./ProductHome";
+import DummyData from "./ProductData";
 export const ProductCheckout = (props) => {
-  console.log(props);
+  // console.log(props);
   const hellos = [
     {
       name:
@@ -85,8 +87,9 @@ export const ProductCheckout = (props) => {
   return (
     <View style={styles.center}>
       <Text>This is the Product Home page screen.</Text>
+      <ProductHome DummyData={DummyData} />
 
-      <FlatList
+      {/* <FlatList
         data={hellos}
         // keyExtractor={(hello) => hello.id}
         renderItem={({ item }) => {
@@ -119,7 +122,7 @@ export const ProductCheckout = (props) => {
             // </ScrollView>
           );
         }}
-      />
+      /> */}
       {/* <Button
           title="Go to About Screen"
           onPress={() => navigation.navigate("About")} // We added an onPress event which would navigate to the About screen
