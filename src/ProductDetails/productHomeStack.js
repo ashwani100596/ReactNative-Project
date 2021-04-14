@@ -6,6 +6,7 @@ import ProductHome from "./ProductHome";
 import Shiping from "./Freeship";
 import ProductCheckout from "./ProductCheckout";
 import TermsAndCondition from "./TermsAndCondition";
+import ProductDetails from "./ProductDetails";
 
 const Stack = createStackNavigator();
 
@@ -21,8 +22,9 @@ function ProductHomeStack() {
         headerBackTitle: "Back",
       }}
     >
-      {/* <Stack.Screen name="ProductCheckout" component={ProductCheckout} /> */}
       <Stack.Screen name="Product" component={ProductHome} />
+      <Stack.Screen name="ProductDetails" component={ProductDetails} />
+      <Stack.Screen name="ProductCheckout" component={ProductCheckout} />
       <Stack.Screen name="Shiping" component={Shiping} />
       <Stack.Screen name="AddToCart" component={AddToCart} />
       <Stack.Screen name="ProductOffer" component={ProductOffer} />
