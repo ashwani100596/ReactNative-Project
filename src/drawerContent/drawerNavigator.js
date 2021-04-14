@@ -18,30 +18,13 @@ import Refrel from "./Screen/Refrel";
 import MainStackNavigator from "../MainStackNavigator";
 import SettingScreen from "../BottomNavigation/settingScreen";
 import Profile from "../BottomNavigation/Profile";
-
-function CustomDrawerContent(props) {
-  return (
-    <DrawerContentScrollView {...props}>
-      <DrawerItemList {...props} />
-      <DrawerItem
-        label="Close drawer"
-        onPress={() => props.navigation.dispatch(DrawerActions.closeDrawer())}
-      />
-      <DrawerItem
-        label="Toggle drawer"
-        onPress={() => props.navigation.dispatch(DrawerActions.toggleDrawer())}
-      />
-    </DrawerContentScrollView>
-  );
-}
+import ProductHomeStack from "../ProductDetails/productHomeStack.js";
 
 const Drawer = createDrawerNavigator();
 
 export default function DrawerNavigator() {
   return (
-    <Drawer.Navigator
-    // drawerContent={(props) => <CustomDrawerContent {...props} />}
-    >
+    <Drawer.Navigator>
       <Drawer.Screen name="Home" component={MainStackNavigator} />
       <Drawer.Screen
         name="MusicStack"
@@ -54,10 +37,11 @@ export default function DrawerNavigator() {
           headerTintColor: "black",
         }}
       />
+      <Drawer.Screen name="Product" component={ProductHomeStack} />
       <Drawer.Screen name="EditProfile" component={EditProfile} />
+      <Drawer.Screen name="Feedback" component={Feedback} />
       <Drawer.Screen name="Settings" component={SettingScreen} />
       <Drawer.Screen name="Profile" component={Profile} />
-      <Drawer.Screen name="Feedback" component={Feedback} />
       <Drawer.Screen name="Logout" component={Logout} />
       <Drawer.Screen name="ManageSubricption" component={ManageSubricption} />
       <Drawer.Screen name="Payment" component={Payment} />
