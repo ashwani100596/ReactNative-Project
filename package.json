@@ -19,6 +19,7 @@
     "expo-camera": "~9.1.0",
     "expo-image-picker": "~9.2.0",
     "expo-status-bar": "~1.0.3",
+    "owl.carousel": "^2.3.4",
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "react-hook-form": "^6.15.4",

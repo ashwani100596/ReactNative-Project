@@ -71,6 +71,104 @@ var ProductHome = ({ navigation }) => {
     //     />
     //   </View>
     // </ScrollView>
+
+    // <ScrollView>
+    //   <View style={styles.center}>
+    //     <Image style={styles.img} source={DummyData.details.fourth_pic} />
+
+    //     <Text style={styles.textstyle}>{DummyData.details.ProductName}</Text>
+    //     <Text style={styles.OffreStyle}>{DummyData.details.Offerprice}</Text>
+    //     <Text style={styles.ActualStyle}>{DummyData.details.Actualprice}</Text>
+    //     <AntDesign name="heart" size={24} color="red" />
+    //     <Text>Safe</Text>
+    //     <Text>Quality</Text>
+    //     <Text>Fresh</Text>
+    //     {/* <Icon name="Heart" /> */}
+    //     <Text>{DummyData.details.description}</Text>
+
+    //     <Button
+    //       title="Add to cart"
+    //       onPress={() => navigation.navigate("AddToCart")}
+    //     />
+    //     <Button
+    //       title="Shiping"
+    //       onPress={() => navigation.navigate("Shiping")}
+    //     />
+    //     <Button
+    //       title="Proceed to Checkout"
+    //       onPress={() => navigation.navigate("ProductOffer")}
+    //     />
+    //   </View>
+    // </ScrollView>
+
+
+    return (
+      <View style>
+        <Text>
+          hello world
+        </Text>
+      </View>
+      // <View style={styles.center}>
+      //   <FlatList
+      //    data={DummyData}
+      //    keyExtractor={(item) => item}
+      //    renderItem={({ item }) => {
+      //     return (
+      //         <ProductDetails 
+      //           <View>
+      //           <Text>{DummyData.results[0].FruitName}</Text>
+      //         </View>
+      //         />
+      //          />
+      //   }
+      //   />
+        {/* <Text>{DummyData.results[1].FruitName}</Text> */}
+        {/* <FlatList
+          data={DummyData}
+          keyExtractor={(item) => item}
+          renderItem={({ item }) => {
+            return <Text>ashwaniiiiiii</Text>;
+          }}
+        /> */}
+        {/* <FlatList
+          data={DummyData}
+          // keyExtractor={(item) => item.ItemNo}
+          renderItem={({ item }) => {
+            console.log(DummyData.results[0].FruitName);
+            return (
+              <View>
+                <Text>{DummyData.results[0].FruitName}</Text>
+                <Text>ashwaniiiiiii</Text>
+              </View>
+            );
+          }}
+        /> */}
+      // </View>
+    );
+  };
+  const styles = StyleSheet.create({
+    // // center: {
+    // //   justifyContent: "center",
+    // //   alignItems: "center",
+    // //   textAlign: "center",
+    // // },
+    // textstyle: {
+    //   flex: 2,
+    //   // textAlign: "center",
+    //   fontSize: 20,
+    // },
+    // img: {
+    //   width: 400,
+    //   height: 400,
+    //   resizeMode: "cover",
+    // },
+    // OffreStyle: {
+    //   color: "green",
+    // },
+    // ActualStyle: {
+    //   color: "black",
+    // },
+  });
   );
 };
 const styles = StyleSheet.create({
