@@ -1,5 +1,5 @@
 import { StatusBar } from "expo-status-bar";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 import {
   View,
   Text,
@@ -16,60 +16,123 @@ import { ScrollView } from "react-native-gesture-handler";
 import { AntDesign } from "@expo/vector-icons";
 // import Icon from "react-native-vector-icons";
 import DummyData from "./ProductData";
+import { Dimensions } from "react-native";
+// import ProductDetails from "./ProductDetails";
+// import { AntDesign } from "@expo/vector-icons";
 
-var ProductHome = () => {
-  return (
-    <ScrollView>
-      <View style={styles.center}>
-        <Image style={styles.img} source={DummyData.details.fourth_pic} />
+const { width: windowWidth, height: windowHeight } = Dimensions.get("window");
 
-        <Text style={styles.textstyle}>{DummyData.details.ProductName}</Text>
-        <Text style={styles.OffreStyle}>{DummyData.details.Offerprice}</Text>
-        <Text style={styles.ActualStyle}>{DummyData.details.Actualprice}</Text>
-        <AntDesign name="heart" size={24} color="red" />
-        <Text>Safe</Text>
-        <Text>Quality</Text>
-        <Text>Fresh</Text>
-        {/* <Icon name="Heart" /> */}
-        <Text>{DummyData.details.description}</Text>
+const ProductHome = ({ navigation }) => {
+  const Slide = ({ data }) => {
+    return (
+      <View
+        style={{
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        <TouchableOpacity
+          onPress={() => {
+            console.log(data);
+            navigation.navigate("ProductDetails", {
+              param: data,
+            });
+          }}
+        >
+          <View
+            style={{
+              // flex: 0.4,
+              justifyContent: "center",
+              alignContent: "center",
+            }}
+          >
+            <Image source={{ uri: data.FruitImg1 }} style={styles.image} />
+          </View>
+          <View>
+            <View style={{ flexDirection: "row" }}>
+              <Text style={styles.productName}>{data.FruitName}</Text>
+              <View
+                style={{
+                  flex: 1,
+                  flexDirection: "row",
+                  alignItems: "center",
+                  justifyContent: "flex-end",
+                }}
+              >
+                <AntDesign name="star" size={24} color="red" />
+                <AntDesign name="star" size={24} color="red" />
+                <AntDesign name="star" size={24} color="red" />
+                <AntDesign name="star" size={24} color="red" />
+              </View>
+            </View>
 
-        <Button
-          title="Add to cart"
-          onPress={() => navigation.navigate("AddToCart")}
-        />
-        <Button
-          title="Shiping"
-          onPress={() => navigation.navigate("Shiping")}
-        />
-        <Button
-          title="Proceed to Checkout"
-          onPress={() => navigation.navigate("ProductOffer")}
-        />
+            <View style={styles.PriceContainer}>
+              <View
+                style={{
+                  flex: 1,
+                  flexDirection: "row",
+                  justifyContent: "flex-start",
+                  fontSize: 20,
+                }}
+              >
+                <Text style={{ fontSize: 20 }}>Price </Text>
+              </View>
+              <Text style={styles.offerPrice}>{data.fruitPrice} </Text>
+              <Text style={styles.originalPric}> $-20</Text>
+            </View>
+          </View>
+        </TouchableOpacity>
       </View>
-    </ScrollView>
+    );
+  };
+
+  // const render = useMemo(
+  //   () => ({ item }) => {
+  //     return <Slide item={item} />;
+  //   },
+  //   []
+  // );
+  return (
+    <FlatList
+      data={DummyData.results}
+      keyExtractor={(index) => index.ItemNo.toString()}
+      // renderItem={render}
+      renderItem={({ item }) => {
+        return <Slide data={item} />;
+      }}
+    />
   );
 };
 const styles = StyleSheet.create({
-  // center: {
-  //   justifyContent: "center",
-  //   alignItems: "center",
-  //   textAlign: "center",
-  // },
-  textstyle: {
-    flex: 2,
-    // textAlign: "center",
-    fontSize: 20,
+  image: {
+    justifyContent: "center",
+    alignItems: "center",
+    height: 350,
+    width: windowWidth,
   },
-  img: {
-    width: 400,
-    height: 400,
-    resizeMode: "cover",
+  productName: {
+    fontSize: 25,
+    fontWeight: "bold",
   },
-  OffreStyle: {
-    color: "green",
+  PriceContainer: {
+    alignItems: "flex-end",
+    flexDirection: "row",
+    // justifyContent: "flex-start",
   },
-  ActualStyle: {
+  originalPric: {
+    textDecorationLine: "line-through",
+    textDecorationStyle: "solid",
     color: "black",
+    fontSize: 15,
+    textAlign: "center",
+    fontWeight: "bold",
+    // margin: 12,
+  },
+  offerPrice: {
+    color: "#3EA806",
+    fontSize: 20,
+    textAlign: "center",
+    fontWeight: "bold",
   },
 });
 export default ProductHome;
