@@ -80,11 +80,3 @@ const styles = StyleSheet.create({
     color: "white",
   },
 });
-
-// const styles = StyleSheet.create({
-//   Text: {
-//     fontWeight: "bold",
-//     marginTop: 500,
-//     textAlign: "center",
-//   },
-// });
