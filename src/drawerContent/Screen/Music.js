@@ -8,7 +8,6 @@ import {
   TouchableOpacity,
   Alert,
 } from "react-native";
-import Details from "./Details";
 const Music = (props, { item }) => {
   const navigatetoDetail = useCallback(() => {
     props.functiontoNavigate();
