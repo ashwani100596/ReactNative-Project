@@ -12,8 +12,10 @@ import {
 // import DummyData from "./ProductData";
 import { AntDesign, Feather, MaterialCommunityIcons } from "@expo/vector-icons";
 import { Dimensions } from "react-native";
-
+import CustomText from "./CustomText";
 const { width: windowWidth, height: windowHeight } = Dimensions.get("window");
+const text =
+  "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to mak";
 
 const ProductDetails = ({ route }) => {
   //   console.log(route.params);
@@ -28,32 +30,52 @@ const ProductDetails = ({ route }) => {
           style={{
             justifyContent: "center",
             alignContent: "center",
-            borderBottomLeftRadius: 30,
-            borderBottomRightRadius: 30,
+            // borderBottomLeftRadius: 30,
+            // borderBottomRightRadius: 30,
           }}
         >
           <Image style={styles.image} source={{ uri: param.FruitImg1 }} />
         </View>
         <View
           style={{
+            flex: 1,
             borderTopLeftRadius: 30,
             borderTopRightRadius: 30,
-            padding: 10,
+            padding: 15,
+            // marginTop: -40,
+            // paddingTop: -50,
           }}
         >
           <View>
-            <Text style={styles.productName}>{param.FruitName}</Text>
+            <View
+              style={{
+                flex: 1,
+                justifyContent: "center",
+                // alignItems: "center",
+              }}
+            >
+              <Text style={styles.productName}>{param.FruitName}</Text>
+            </View>
             <View style={styles.Price}>
-              <View style={styles.PriceContainer}>
-                <Text style={styles.offerPrice}>{param.fruitPrice}</Text>
+              <View style={{ flex: 1, flexDirection: "row" }}>
+                <View>
+                  <Text style={styles.offerPrice}>{param.fruitPrice}</Text>
+                </View>
+                <View>
+                  <Text style={styles.originalPric}> $ 10.75</Text>
+                </View>
               </View>
               <TouchableOpacity style={styles.btn}>
-                <Text style={styles.btnText}>Freeship</Text>
+                <View>
+                  <Text style={styles.btnText}>FREE SHIP</Text>
+                </View>
               </TouchableOpacity>
             </View>
+
             <View style={styles.icn}>
               <Feather name="smile" size={20} color="#C0E218" />
               <Text style={styles.icn1}>Safe</Text>
+
               <AntDesign name="addfile" size={20} color="#C0E218" />
               <Text style={styles.icn2}>Quality</Text>
               <MaterialCommunityIcons
@@ -64,24 +86,23 @@ const ProductDetails = ({ route }) => {
               <Text style={styles.icn3}>Fresh</Text>
             </View>
             <View>
-              <Text numberOfLines={3} ellipsizeMode={"tail"}>
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry. Lorem Ipsum has been the industry's standard dummy
-                text ever since the 1500s, when an unknown printer took a galley
-                of type and scrambled it to make a type specimen book. It has
-                survived not only five centuries, but also the leap into
-                electronic typesetting, remaining essentially unchanged. It was
-                popularised in the 1960s with the release of Letraset sheets
-                containing Lorem Ipsum passages, and more recently with desktop
-                publishing software like Aldus PageMaker including versions of
-                Lorem Ipsum
-              </Text>
+              <CustomText numberOfLines={3}>{text}</CustomText>
             </View>
-            <View style={{ flexDirection: "row" }}>
+            <View style={{ flexDirection: "row", marginTop: 10 }}>
               <AntDesign name="heart" size={30} color="red" />
+
               <TouchableOpacity style={styles.cart}>
-                <Text style={styles.cartbtn}>Add To Cart</Text>
+                <View>
+                  <Text style={styles.cartbtn}>Add To Cart</Text>
+                </View>
               </TouchableOpacity>
+            </View>
+            <View>
+              <Text
+                style={{ color: "black", fontWeight: "bold", fontSize: 20 }}
+              >
+                Similar Products
+              </Text>
             </View>
             <View style={{ height: 180, marginTop: 10 }}>
               <ScrollView
@@ -100,7 +121,37 @@ const ProductDetails = ({ route }) => {
                         margin: 5,
                       }}
                     />
-                    <Text>Japanese Cherry</Text>
+                    <Text>{param.FruitName}</Text>
+                  </View>
+                </View>
+                <View style={{ height: 150, width: 150 }}>
+                  <View style={{ flex: 2 }}>
+                    <Image
+                      source={{ uri: param.FruitImg1 }}
+                      style={{
+                        flex: 1,
+                        width: null,
+                        height: null,
+                        resizeMode: "cover",
+                        margin: 5,
+                      }}
+                    />
+                    <Text>{param.FruitName}</Text>
+                  </View>
+                </View>
+                <View style={{ height: 150, width: 150 }}>
+                  <View style={{ flex: 2 }}>
+                    <Image
+                      source={{ uri: param.FruitImg1 }}
+                      style={{
+                        flex: 1,
+                        width: null,
+                        height: null,
+                        resizeMode: "cover",
+                        margin: 5,
+                      }}
+                    />
+                    <Text>{param.FruitName}</Text>
                   </View>
                 </View>
                 <View style={{ height: 150, width: 150 }}>
@@ -113,39 +164,9 @@ const ProductDetails = ({ route }) => {
                         margin: 5,
                         height: null,
                         resizeMode: "cover",
-                        margin: 5,
                       }}
                     />
-                    <Text>American Cherry</Text>
-                  </View>
-                </View>
-                <View style={{ height: 150, width: 150 }}>
-                  <View style={{ flex: 2 }}>
-                    <Image
-                      source={{ uri: param.FruitImg1 }}
-                      style={{
-                        flex: 1,
-                        width: null,
-                        margin: 5,
-                        height: null,
-                        resizeMode: "cover",
-                      }}
-                    />
-                  </View>
-                </View>
-                <View style={{ height: 150, width: 150 }}>
-                  <View style={{ flex: 2 }}>
-                    <Image
-                      source={{ uri: param.FruitImg1 }}
-                      style={{
-                        flex: 1,
-                        width: null,
-                        margin: 5,
-                        height: null,
-                        resizeMode: "cover",
-                      }}
-                    />
-                    <Text>Indian Cherry</Text>
+                    <Text>{param.FruitName}</Text>
                   </View>
                 </View>
               </ScrollView>
@@ -174,20 +195,22 @@ const styles = StyleSheet.create({
     alignItems: "center",
     height: 350,
     width: windowWidth,
+    borderBottomLeftRadius: 30,
+    borderBottomRightRadius: 30,
+    padding: 15,
   },
   productName: {
-    fontSize: 20,
+    fontSize: 25,
     fontWeight: "bold",
   },
   Price: {
-    flex: 1,
+    // flex: 1,
     flexDirection: "row",
-    justifyContent: "center",
   },
   offerPrice: {
     flex: 1,
     color: "#3EA806",
-    fontSize: 20,
+    fontSize: 22,
     textAlign: "left",
     fontWeight: "bold",
     // margin: 8,
@@ -196,11 +219,12 @@ const styles = StyleSheet.create({
     flex: 1,
     textDecorationLine: "line-through",
     textDecorationStyle: "solid",
-    color: "black",
+    color: "#808080",
     fontSize: 15,
-    textAlign: "left",
+    textAlign: "center",
     fontWeight: "bold",
-    // margin: 12,
+    margin: 7,
+    marginLeft: 15,
   },
   btn: {
     // alignItems: "flex-end",
@@ -227,37 +251,43 @@ const styles = StyleSheet.create({
   icn: {
     flex: 1,
     flexDirection: "row",
-    borderTopColor: "#D8E3E7",
-    borderTopWidth: 1,
-    margin: 10,
+    margin: 8,
+    padding: 8,
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "center",
+    // justifyContent: "center",
+    // textAlign: "center",
   },
   icn1: {
     flex: 1,
     fontWeight: "bold",
-    // margin: 10,
+    marginLeft: 10,
     fontSize: 15,
   },
   icn2: {
     flex: 1,
     fontWeight: "bold",
-    // margin: 10,
+    marginLeft: 10,
     fontSize: 15,
   },
   icn3: {
     flex: 1,
     fontWeight: "bold",
-    // margin: 10,
+    marginLeft: 10,
     fontSize: 15,
   },
   cart: {
     flexDirection: "row",
+    // width: 200,
     // height: 40,
+    // marginTop: 10,
   },
   cartbtn: {
     color: "white",
-    marginLeft: 90,
+    marginLeft: 20,
     backgroundColor: "#3EA806",
-    width: 220,
+    width: 280,
     height: 40,
     borderRadius: 5,
     textAlign: "center",
