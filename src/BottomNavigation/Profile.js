@@ -31,10 +31,8 @@ const Profile = () => {
       return;
     }
     setSelectedImg({ localUri: camerapicker.uri });
-    //console.log(camerapicker);
     close();
   };
-  //gallery
   const openImage = async () => {
     const permission = await ImagePicker.requestMediaLibraryPermissionsAsync();
     if (permission.granted === false) {
@@ -52,7 +50,6 @@ const Profile = () => {
       return;
     }
     setSelectedImg({ localUri: picker.uri });
-    //console.log(picker);
     close();
   };
   return (
@@ -113,7 +110,6 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
   panel: {
-    //flex: 1,
     marginRight: 10,
   },
   header: {
@@ -186,6 +182,3 @@ const styles = StyleSheet.create({
     backgroundColor: "#00BFFF",
   },
 });
-{
-  /* <EditProfileButton title="edit" size="sm" backgroundColor="#007BFF" /> */
-}

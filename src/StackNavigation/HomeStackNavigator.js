@@ -17,7 +17,7 @@ const HomeStackNavigator = () => {
         headerBackTitle: "Back",
       }}
     >
-      <Stack.Screen name="HomePage" component={HomePage} />
+      <Stack.Screen name="Home" component={HomePage} />
       <Stack.Screen name="Scroll" component={Scroll} />
     </Stack.Navigator>
   );

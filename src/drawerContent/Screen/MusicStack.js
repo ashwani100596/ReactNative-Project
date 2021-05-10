@@ -3,7 +3,6 @@ import { Button, View, Text, StyleSheet } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import DetailS from "./Details";
-// import Music from "../component/MusicMusic";
 import Music from "./Music";
 import MusicList from "./MusicList";
 import Details from "./Details";
@@ -25,7 +24,7 @@ const MusicStack = () => {
         name="MusicScreen"
         component={MusicList}
         options={{
-          title: "Micheal-Jackson Songs",
+          title: "Music",
           headerStyle: {
             backgroundColor: "#fff",
           },

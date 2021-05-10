@@ -1,16 +1,16 @@
-# Expo project
+# React-native- project using (Expo)
 
-# Adding Use Form hooks
+## This task includes all the topics that i have learnt during building it:-
 
-yarn add react-hook-form
-yarn cache clean
+1. How to make splash screen.
+2. How to build screens.
+3. How to make a login screen.
+4. Navigation - stack, drawer, bottom tab.
+5. Fetching data from a api.
+6. How to pass props.
+7. Implement integrated camera.
+8. How to make reusable components.
 
-## after deleting node module
+#### These are the screens
 
-yarn install
-
-# Add navigation
-
-yarn add @react-navigation/native
-yarn add react-native-reanimated react-native-gesture-handler react-native-screens react-native-safe-area-context @react-native-community/masked-view
-yarn add @react-navigation/stack
+![image1](./images/image1.jpeg) ![image2](./images/image2.jpeg) ![image3](./images/image3.jpeg) ![image4(./images/image4.jpeg)

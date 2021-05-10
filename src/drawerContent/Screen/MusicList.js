@@ -54,9 +54,7 @@ const MusicList = ({ props, navigation }) => {
       <FlatList
         data={Songs.results}
         keyExtractor={(index) => index.key}
-        // keyExtractor={(item) => item.key}
         renderItem={render}
-        // onRefresh={getSongsFromApi}
       />
     </View>
   );

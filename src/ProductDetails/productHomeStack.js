@@ -14,15 +14,7 @@ function ProductHomeStack() {
   return (
     <Stack.Navigator
       initialRouteName="ProductHome"
-      // initialRouteName={ProductHome}
       screenOptions={{ headerShown: false }}
-      // screenOptions={{
-      //   headerStyle: {
-      //     backgroundColor: "#9AC4F8",
-      //   },
-      //   headerTintColor: "white",
-      //   headerBackTitle: "Back",
-      // }}
     >
       <Stack.Screen name="Product" component={ProductHome} />
       <Stack.Screen name="ProductDetails" component={ProductDetails} />

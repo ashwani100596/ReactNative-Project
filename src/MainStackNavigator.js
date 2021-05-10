@@ -10,7 +10,6 @@ const Tab = createBottomTabNavigator();
 const MainStackNavigator = () => {
   return (
     <Tab.Navigator
-      // initialRouteName: Settings
       screenOptions={({ route }) => ({
         tabBarIcon: ({ focused, color, size }) => {
           let iconName;
@@ -22,8 +21,6 @@ const MainStackNavigator = () => {
           } else if (route.name === "Profile") {
             iconName = focused ? "ios-person" : "ios-person";
           }
-
-          // You can return any component that you like here!
           return <Ionicons name={iconName} size={size} color={color} />;
         },
       })}
@@ -45,7 +42,6 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
-    // paddingTop: Constants.statusBarHeight,
     backgroundColor: "#ecf0f1",
     padding: 8,
   },

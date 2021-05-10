@@ -29,7 +29,6 @@ const Music = (props, { item }) => {
 
 const styles = StyleSheet.create({
   container: {
-    //Button:
     backgroundColor: "white",
     margin: 15,
     opacity: 0.5,

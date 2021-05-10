@@ -5,10 +5,6 @@ const Scroll = ({ navigation }) => {
   return (
     <View style={styles.center}>
       <Text>This is the MainPage screen</Text>
-      {/* <Button
-        title="Go to About Screen"
-        onPress={() => navigation.navigate("About")} // We added an onPress event which would navigate to the About screen
-      /> */}
     </View>
   );
 };

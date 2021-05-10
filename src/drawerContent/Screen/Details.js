@@ -2,7 +2,6 @@ import React from "react";
 import { View, Text, StyleSheet, Button } from "react-native";
 
 const Details = ({ route, navigation }) => {
-  // console.warn(route.params);
   const { param } = route.params;
 
   return (
