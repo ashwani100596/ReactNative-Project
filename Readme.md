@@ -13,7 +13,7 @@
 
 #### These are the screens
 
-![image1](./images/image1.jpeg) ![image2](./images/image2.jpeg) ![image5](./images/image5.jpeg)
+![image1](./images/image1.jpeg) ![image2](./images/image2.jpeg) ![image5](./images/image5.png)
 
 #### Music Screen
 
